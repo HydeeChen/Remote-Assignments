@@ -10,7 +10,7 @@ import Foundation
 //var myFriends : [String] = [] //一開始沒有朋友QQ，避免變數重複，故先註解。
 
 //2. According to Q1, now I have three friends, ‘Ian’, ‘Bomi’, and ‘Kevin’. Please help me to add their name into myFriends array at once.
-var myFriends : [String] = ["Ian", "Bomi", "Kevin"]
+var myFriends: [String] = ["Ian", "Bomi", "Kevin"]
 //如果 myFriends 已經事先宣告過 (裡面可能有值)，有什麼語法可以把 ["Ian", "Bomi", "Kevin"] 加進去 (不是取代)？
 myFriends.append("Ian")  //不是取代，而是新增
 myFriends.append("Bomi")
@@ -45,7 +45,7 @@ myFriends[myFriends.count - 1] //將array項目數-1就是最後一個index值�
 myFriends.last
 
 //9. Please initialize a Dictionary with keys of type String, value of type Int, and assign it to a variable named myCountryNumber.
-var myCountryNumber:[String:Int] = [:]
+var myCountryNumber: [String:Int] = [:]
 
 //10. Please add three values 1, 44, 81 to myCountryNumber for keys ‘US’, ‘GB’, ‘JP’ respectively.
 myCountryNumber = [ "US": 1,
@@ -57,7 +57,7 @@ myCountryNumber = [ "US": 1,
 myCountryNumber["GB"] = 0
 
 //12. How to declare an empty dictionary?
-var emptyDictionary:[String:Int] = [:]
+var emptyDictionary: [String:Int] = [:]
 
 //13. How to remove a key-value pair in a dictionary?
 //以剛剛國家號碼來示範：
