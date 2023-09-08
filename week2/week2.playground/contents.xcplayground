@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
     <pages>
-        <page name='Part 1-Object-Oriented Swift'/>
-        <page name='part2'/>
+        <page name='Part 1-Object-Oriented'/>
+        <page name='part 2-Enum and Optionals'/>
+        <page name='part 3-Protocol in Swift'/>
+        <page name='part 4-Error Handling'/>
     </pages>
 </playground>
