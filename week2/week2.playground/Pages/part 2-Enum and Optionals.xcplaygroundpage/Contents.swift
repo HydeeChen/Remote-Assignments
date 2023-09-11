@@ -12,7 +12,7 @@ enum Gasoline {
 }
  */
 //(1-2) Every kind of gasoline has its price. Please declare a named price and a method named getPrice separately in Gasoline enum that both will return different prices depending on different gasoline.
-
+var price: Int = 0
 enum Gasoline {
     case oil92
     case oil95
@@ -20,8 +20,6 @@ enum Gasoline {
     case diesel
     
     func getPrice() -> Int {
-        var price: Int
-        
         switch self {
         case .oil92:
             price = 92 //假設92汽油為92元
@@ -42,7 +40,7 @@ print("\(oilName98)價格為\(price98)元")
 
 //(1-3)Please establish raw values for Gasoline . The data type of raw value should be String. For example, Gasoline.oil92.rawValue should be “92”.
 
-//為避免名稱，微調變數名稱
+//為避免名稱重複，微調變數名稱
 enum GasolineType: Int {
     case oil92 = 92
     case oil95 = 96

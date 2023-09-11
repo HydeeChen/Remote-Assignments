@@ -19,7 +19,7 @@ struct Person1: PoliceMan {
 
 //3. Declare a protocol ToolMan with a method fixComputer that has no argument and return void.
 protocol Toolman {
-    func fixComputer() -> Void  //會修電腦的工具人？
+    func fixComputer()   //會修電腦的工具人？
 }
 
 //4. Add a property toolMan to the struct Person with data type ToolMan .
@@ -33,7 +33,7 @@ struct Person2: PoliceMan {
 
 //5. Declare a struct named Engineer that conforms to the ToolMan protocol.
 struct Engineer: Toolman {
-    func fixComputer() -> Void {}
+    func fixComputer() {}
 }
 
 //6. Create a Person instance with the name “Steven” and also create the relative data you need to declare this instance.

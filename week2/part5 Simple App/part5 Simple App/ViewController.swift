@@ -25,9 +25,9 @@ class ViewController: UIViewController {
 //設定按鈕Action
     @IBAction func changeAction(_ sender: Any) {
         //背景顏色Index隨機
-        var colorIndex = Int.random(in: 0...6)
+        var colorIndex = Int.random(in: 0...backgroundColors.count)
         //文字內容Index隨機
-        var textIndex = Int.random(in: 0...6)
+        var textIndex = Int.random(in: 0...textContain.count)
         
         //設定背景顏色隨機
         backgroundOutlet.backgroundColor =  backgroundColors[colorIndex]

@@ -5,6 +5,10 @@ import Foundation
 //1. Declare a class Animal with a property gender and a method eat() . The data type of gender should be enum Gender as below and when you call eat() method, it will print “I eat everything!”
 
 class Animal {
+    var gender: Gender
+    init(gender: Gender) {
+    self.gender = gender
+    }
     enum Gender {
         case male
         case female
@@ -44,10 +48,10 @@ class Zoo {
     }
 }
 
-let zoo = Zoo(weeklyHot: Tiger())
-let tiger = Tiger()
-let elephant = Elephant()
-let horse = Horse()
+let zoo = Zoo(weeklyHot: Animal(gender: .male))
+let tiger = Tiger(gender: .male)
+let elephant = Elephant(gender: .male)
+let horse = Horse(gender: .male)
 
 zoo.weeklyHot = tiger
 zoo.weeklyHot = elephant
