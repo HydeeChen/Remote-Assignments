@@ -12,29 +12,32 @@ enum Gasoline {
 }
  */
 //(1-2) Every kind of gasoline has its price. Please declare a named price and a method named getPrice separately in Gasoline enum that both will return different prices depending on different gasoline.
-var price: Int = 0
+
 enum Gasoline {
     case oil92
     case oil95
     case oil98
     case diesel
     
+    var price: Int {
+        switch self {
+        case .oil92: return 92
+        case .oil95: return 95
+        case .oil98: return 98
+        case .diesel: return 99
+        }
+    }
     func getPrice() -> Int {
         switch self {
-        case .oil92:
-            price = 92 //假設92汽油為92元
-        case .oil95:
-            price = 95 //假設95汽油為95元
-        case .oil98:
-            price = 98 //假設98汽油為98元
-        case .diesel:
-            price = 99 //假設柴油為99元
+        case .oil92: return 92 //假設92汽油為92元
+        case .oil95: return 95 //假設95汽油為95元
+        case .oil98: return 98 //假設98汽油為98元
+        case .diesel: return 99 //假設柴油為99元
         }
-        return price
     }
 }
 
-let oilName98 = Gasoline.oil98//測試結果是否正確
+var oilName98 = Gasoline.oil98//測試結果是否正確
 let price98 = oilName98.getPrice()
 print("\(oilName98)價格為\(price98)元")
 
