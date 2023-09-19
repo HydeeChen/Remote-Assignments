@@ -106,7 +106,7 @@ class ViewController: UIViewController {
                 //使用alert函數
                 setAlert(titleName: "Error", messageContent: "Check Password should not be empty.", actionTitle: "ok")
                 
-                //情境：若使用者密碼與check欄位相同則建立完成
+                //情境：若使用者密碼與check欄位相同則建立帳號完成
             } else if  passwordText ==  checkText {
                 
                 //使用alert函數
