@@ -24,6 +24,8 @@ let myClosure = { (completionHandler: (String) -> Void) in
 }
 myClosure { (capturedValue: String) in
     print(capturedValue) }
+//差異說明：                                                                                         (1) myClosure: ((String) -> Void)? 是定義了一個可選的變數，可以在需要的時候賦值（我個人的理解是先宣告變數並放著）。                              (2) let myClosure = { (completionHandler: (String) -> Void) in ... } 是直接定義了一個帶有closure的變數，裡面有個 completionHandler讓使用者丟職業進去，輸入後這個程式就立即執行。
+
 //三、將函式存放在變數中並呼叫它
 func test() {
      print("test...")
@@ -57,10 +59,18 @@ func testTheNumber(number: Int) {
 //將第一個大括號{移到最前面
 //在原本大括號的地方加上keyword in
 
+
 let number: (Int) -> Bool = {(number: Int) -> Bool in
     return number % 2 != 0
 }
 print(number(9))
+
+//補充方法：『Shorthand Argument Names』是指類似火星文的參數省略寫法。
+//當 closure { } 的程式碼欲存取傳入的參數時， 可透過內建的秘密代號存取，$0 代表第一個參數，$1 代表第二個參數，其它以此類推。當我們透過 $0、$1 存取，原本的參數宣告也就沒有存在的價值，因此我們可以一口氣將 closure 的參數，回傳型別 & in 全部移除。
+
+
+let numberShort: (Int) -> Bool = { $0 % 2 != 0 }
+print(numberShort(9))
 
 //3. Please complete the following function that prints a triangle made of asterisks. 並且回答 printTriangle(layers: 5)
 //概念是第幾排就幾個圖案，第一排一個*、第二排兩個**….第三排就三個***。

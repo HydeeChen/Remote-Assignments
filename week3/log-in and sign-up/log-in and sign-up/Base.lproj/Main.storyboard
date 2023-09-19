@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_72" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,21 +14,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="log_in_and_sign_up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AppWorks School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1d-Y4-RIe">
-                                <rect key="frame" x="10" y="139" width="410" height="48"/>
+                                <rect key="frame" x="10" y="130" width="355" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" highlighted="YES" selected="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jUP-FI-c0y" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="120" y="257" width="187" height="32"/>
+                                <rect key="frame" x="120" y="248" width="132" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="yV1-VU-2Qj"/>
-                                </constraints>
                                 <segments>
                                     <segment title="Log In"/>
                                     <segment title="Sign up"/>
@@ -39,7 +37,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bie-dL-McQ">
-                                <rect key="frame" x="96" y="503" width="235" height="30"/>
+                                <rect key="frame" x="68.666666666666686" y="494" width="235" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="235" id="5aW-0d-Wmo"/>
                                     <constraint firstAttribute="height" constant="30" id="WPX-JU-bJN"/>
@@ -53,7 +51,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDR-9j-Hev">
-                                <rect key="frame" x="87.666666666666686" y="328" width="255" height="125"/>
+                                <rect key="frame" x="60" y="319" width="255" height="125"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75S-Ki-uzI">
                                         <rect key="frame" x="18" y="13" width="74" height="21"/>
@@ -106,14 +104,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jUP-FI-c0y" secondAttribute="trailing" constant="123" id="2Xq-70-Spi"/>
-                            <constraint firstItem="jUP-FI-c0y" firstAttribute="top" secondItem="Q1d-Y4-RIe" secondAttribute="bottom" constant="70" id="Dlv-dH-yHC"/>
                             <constraint firstItem="Q1d-Y4-RIe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="ItK-Fq-mz8"/>
-                            <constraint firstItem="bie-dL-McQ" firstAttribute="centerX" secondItem="jUP-FI-c0y" secondAttribute="centerX" id="JXK-bR-JDR"/>
-                            <constraint firstItem="jDR-9j-Hev" firstAttribute="top" secondItem="jUP-FI-c0y" secondAttribute="bottom" constant="40" id="LcF-Pp-3XU"/>
                             <constraint firstItem="jDR-9j-Hev" firstAttribute="centerX" secondItem="Q1d-Y4-RIe" secondAttribute="centerX" id="MsQ-5L-HFb"/>
-                            <constraint firstItem="jUP-FI-c0y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="N3c-6c-GTl"/>
+                            <constraint firstItem="jUP-FI-c0y" firstAttribute="top" secondItem="Q1d-Y4-RIe" secondAttribute="bottom" constant="70" id="NyO-jn-24b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jUP-FI-c0y" secondAttribute="trailing" constant="123" id="Vww-xl-nJg"/>
+                            <constraint firstItem="jDR-9j-Hev" firstAttribute="top" secondItem="jUP-FI-c0y" secondAttribute="bottom" constant="40" id="cB2-Kw-FWo"/>
+                            <constraint firstItem="jUP-FI-c0y" firstAttribute="centerX" secondItem="bie-dL-McQ" secondAttribute="centerX" id="kKV-ih-AcJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q1d-Y4-RIe" secondAttribute="trailing" constant="10" id="lov-Vv-mXc"/>
+                            <constraint firstItem="jUP-FI-c0y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="nbP-FP-MNg"/>
                             <constraint firstItem="Q1d-Y4-RIe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="nzv-PM-9EI"/>
                             <constraint firstItem="bie-dL-McQ" firstAttribute="top" secondItem="jDR-9j-Hev" secondAttribute="bottom" constant="50" id="xz2-5y-BVt"/>
                         </constraints>
@@ -136,7 +134,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -49,58 +49,71 @@ class ViewController: UIViewController {
         ckeckLable.textColor = UIColor.gray
     }
     
+    //設定alert的函數以便之後使用
+    func setAlert(titleName: String, messageContent: String, actionTitle: String) {
+        //設定警告內容
+        let alertController = UIAlertController(title: titleName, message: messageContent, preferredStyle: .alert)
+        let action = UIAlertAction(title: actionTitle, style: .default) { (action) in
+        }
+        //顯示警告
+        alertController.addAction(action)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    
     //設置按鈕action
     @IBAction func buttonAction(_ sender: Any) {
         let accoutText = accountTextField!.text
         let passwordText = passwordTextField!.text
         let checkText = checkTextField!.text
         
-        if accoutText == "" {
-            //設定警告內容
-            let alertController = UIAlertController(title: "Error", message: "Account should not be empty.", preferredStyle: .alert)
-            let action = UIAlertAction(title: "ok", style: .default) { (action) in
+        
+        //先判斷segment、再判斷使用者輸入資料是否正確
+        switch segmentOutlet.selectedSegmentIndex {
+        
+            //segment 為log in
+        case 0:
+            //情境：若使用者帳號為空值
+            if accoutText == "" {
+                
+                //使用alert函數
+                setAlert(titleName: "Error", messageContent: "Account should not be empty.", actionTitle: "ok")
+                
+                //情境：若使用者密碼為空值
+            } else if passwordText == ""{
+                
+                //使用alert函數
+                setAlert(titleName: "Error", messageContent: "Check Password should not be empty.", actionTitle: "ok")
+                
+                //情境：若使用者輸入正確
+            } else if accoutText == "appworks_school" && passwordText == "1234" {
+                
+                //使用alert函數
+                setAlert(titleName: "登入成功", messageContent: "😀", actionTitle: "ok")
             }
-            //顯示警告
-            alertController.addAction(action)
-            present(alertController, animated: true, completion: nil)
-        } else if passwordText == ""{
-            let alertController = UIAlertController(title: "Error", message: "Check Password should not be empty.", preferredStyle: .alert)
-            let action = UIAlertAction(title: "ok", style: .default) { (action) in
-            }
-            //顯示警告
-            alertController.addAction(action)
-            present(alertController, animated: true, completion: nil)
-        } else if accoutText == "appworks_school" && passwordText == "1234" && checkText == "1234" && segmentOutlet.selectedSegmentIndex == 1 {
             
-                let alertController = UIAlertController(title: "帳號建立完成！", message: "😀", preferredStyle: .alert)
-                let action = UIAlertAction(title: "ok", style: .default) { (action) in
-                }
-                //顯示警告
-                alertController.addAction(action)
-                present(alertController, animated: true, completion: nil)
-        } else if accoutText == "appworks_school" && passwordText == "1234" && segmentOutlet.selectedSegmentIndex == 0 {
-            let alertController = UIAlertController(title: "登入成功！", message: "😀", preferredStyle: .alert)
-            let action = UIAlertAction(title: "ok", style: .default) { (action) in
+            //segment 為sign up
+        case 1:
+            //情境：若使用者帳號為空值
+            if accoutText == "" {
+                
+                //使用alert函數
+                setAlert(titleName: "Error", messageContent: "Account should not be empty.", actionTitle: "ok")
+                
+                //情境：若使用者密碼為空值
+            } else if passwordText == ""{
+                
+                //使用alert函數
+                setAlert(titleName: "Error", messageContent: "Check Password should not be empty.", actionTitle: "ok")
+                
+                //情境：若使用者密碼與check欄位相同則建立完成
+            } else if  passwordText ==  checkText {
+                
+                //使用alert函數
+                setAlert(titleName: "帳號建立完成", messageContent: "😀", actionTitle: "ok")
             }
-            //顯示警告
-            alertController.addAction(action)
-            present(alertController, animated: true, completion: nil)
-        } else {
-            if segmentOutlet.selectedSegmentIndex == 0 {
-                let alertController = UIAlertController(title: "Error", message: "Login fail", preferredStyle: .alert)
-                let action = UIAlertAction(title: "ok", style: .default) { (action) in
-                }
-                //顯示警告
-                alertController.addAction(action)
-                present(alertController, animated: true, completion: nil)
-            } else if segmentOutlet.selectedSegmentIndex == 1 {
-                let alertController = UIAlertController(title: "Error", message: "Signup fail", preferredStyle: .alert)
-                let action = UIAlertAction(title: "ok", style: .default) { (action) in
-                }
-                //顯示警告
-                alertController.addAction(action)
-                present(alertController, animated: true, completion: nil)
-            }
+        default:
+            break
         }
     }
 }
