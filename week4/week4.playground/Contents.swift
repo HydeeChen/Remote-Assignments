@@ -7,6 +7,13 @@ import UIKit
 //  reloadData 會更新TableView所有數據，包含其 cell、section header、section footer 以及其 index arrays 等等。 為了提高效率，TableView只重新顯示當下的欄位，但如果cell欄位更新後縮小，cell也會更新畫面，縮小欄位高度。reloadData後TableView的delegate跟data  source也重新執行，因此需要消耗較多的效能，因此較適合應用於畫面初始化後，api取得資料後的更動畫面使用。
 // 順序：首先是numberOfSections(in:)，然後是tableView(_:numberOfRowsInSection:)，最後是tableView(_:cellForRowAt:)。這些方法的調用次數和具體邏輯取決於你的數據源和表格視圖的配置。如果你在reloadData()之後有其他的UI更新操作，可能會觸發其他相關的方法，比如tableView(_:willDisplay:forRowAt:)用於通知即將顯示某一行，或者tableView(_:didEndDisplaying:forRowAt:)用於通知某一行已經不再顯示等等。
 
+//補充說明：numberOfSections、numberOfRowsInSection、cellForRowAt 各會執行幾次？
+//A: 就我的理解他應該是要看資料的配置，比如：
+//（1）若你的畫面是一個section，那麼更新資料的時候，dataSource請numberOfSections(in:)跑一次、回傳 Int為1（1個section）。
+//（2）numberOfRows(inSection:)也是看畫面，假設畫面有4個cell，那就回傳 Int為4（執行一次）。
+//（3）tableView(_:cellForRowAt:)的部份就依資料更新的順序，比如剛好滑到第五個順序，dataSource就讓tableView(_:cellForRowAt:)回傳第五個cell的UITableViewCell（假設你從第一個cell滑到第五個cell，那就會執行五次）。
+
+
 //3. 第三題為獨立app - URLSession
 
 //4. (Advanced) Please complete the following function that prints a pyramid made of asterisks.
@@ -16,10 +23,10 @@ var content: String = ""
 func drawAPicture(layers: Int) {
     for i in 1...layers {
         if layers > i {
-            for i in 1...(layers - i ) {
+            for _ in 1...(layers - i ) {    //因為我這邊的i變數沒有用到，其實可直接用"_"取代。
                 content += " "
             }
-            for j in 1...( 2 * i - 1){
+            for _ in 1...( 2 * i - 1){      //因為我這邊的j變數沒有用到，其實可直接用"_"取代。
                 content += "*"
             }
             //跳到下一排

@@ -44,9 +44,9 @@ class ViewController: UIViewController {
                     self.items = station
                     // 更新資料
                     DispatchQueue.main.async {
-                        self.stationIDLabel.text = station.stationID
-                        self.stationNameLabel.text = station.stationName
-                        self.addressLabel.text = station.stationAddress
+                        self.stationIDLabel.text = station.id
+                        self.stationNameLabel.text = station.name
+                        self.addressLabel.text = station.address
                     }
                     
                 } catch {
